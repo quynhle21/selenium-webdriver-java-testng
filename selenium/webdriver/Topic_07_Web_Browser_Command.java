@@ -1,9 +1,12 @@
 package webdriver;
 
 
+import java.net.URL;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
@@ -132,7 +135,6 @@ public class Topic_07_Web_Browser_Command {
 		 driver.navigate().back();
 		 driver.navigate().forward();
 		 driver.navigate().refresh();
-		 driver.navigate().to(new URL("https://www.facebook.com/"));
 		 driver.navigate().to("https://www.facebook.com/");
 		 
 		 // Switch vào Window or tab

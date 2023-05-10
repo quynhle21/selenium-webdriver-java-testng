@@ -41,10 +41,10 @@ public class Topic_16_Checkbox_Radio {
 		
         By dualZoneCheckbox = By.xpath("//label[text()='Dual-zone air conditioning']/preceding-sibling::input");
         
-//        WebElement scroll = driver.findElement(dualZoneCheckbox);
-//        //Scroll để tránh cookies
-//        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoViews(true);", scroll);
-//		sleepInSecond(8);
+//      WebElement scroll = driver.findElement(By.xpath("//div[@id='example']"));
+//       //Scroll để tránh cookies
+//      ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoViews(true);", scroll);
+//	sleepInSecond(8);
 		
         // Click chọn checkbox
 		
@@ -197,7 +197,7 @@ public class Topic_16_Checkbox_Radio {
 		
 	
 	}
-	
+	@Test
 	public void TC_06_Google_Checkbox_Radio() {
 		
 	driver.get("https://docs.google.com/forms/d/e/1FAIpQLSfiypnd69zhuDkjKgqvpID9kwO29UCzeCVrGGtbNPZXQok0jA/viewform");

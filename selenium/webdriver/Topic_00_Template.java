@@ -29,7 +29,9 @@ public class Topic_00_Template {
 	}
 
 	@Test
-	public void TC_01_() {}
+	public void TC_01_() {
+		
+	}
 
 	@Test
 	public void TC_02_() {
@@ -40,9 +42,20 @@ public class Topic_00_Template {
 	public void TC_03_() {
 		
 	}
+	public void sleepInSecond(long timeout) {
+		try {
+			Thread.sleep(timeout * 1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 
+	}
 	@AfterClass
 	public void afterClass() {
 		driver.quit();
+		
 	}
-}
+	
+	
+	}
+

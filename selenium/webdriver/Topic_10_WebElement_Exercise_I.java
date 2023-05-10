@@ -3,6 +3,7 @@ package webdriver;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
@@ -10,10 +11,12 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_10_WebElement_Exercise {
+public class Topic_10_WebElement_Exercise_I {
 	WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
 	String osName = System.getProperty("os.name");
+	JavascriptExecutor jsExecutor;
+	
 	
 	@BeforeClass
 	public void beforeClass() {
@@ -23,6 +26,8 @@ public class Topic_10_WebElement_Exercise {
 		System.setProperty("webdriver.gecko.driver", projectPath + "/browserDrivers/geckodriver");
 	}
 		driver = new FirefoxDriver();
+		
+		jsExecutor = (JavascriptExecutor) driver;
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("http://live.techpanda.org/index.php/customer/account/login/");
@@ -134,7 +139,10 @@ public class Topic_10_WebElement_Exercise {
         
        // Case 1: Enter number only
         driver.findElement(By.id("new_password")).sendKeys("211199");
-        driver.findElement(By.id("create-account-enabled"));
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.id("create-account-enabled")));
+        sleepInSecond(1);
+       
+        driver.findElement(By.id("create-account-enabled")).click();
         sleepInSecond(1);
         
         Assert.assertTrue(driver.findElement(By.cssSelector("li.number-char.completed")).isDisplayed());
@@ -146,7 +154,10 @@ public class Topic_10_WebElement_Exercise {
         // Case 2: Enter lowercase only
         driver.findElement(By.id("new_password")).clear();
         driver.findElement(By.id("new_password")).sendKeys("abcd");
-        driver.findElement(By.id("create-account-enabled"));
+        
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.id("create-account-enabled")));
+        sleepInSecond(1);
+        driver.findElement(By.id("create-account-enabled")).click();
         sleepInSecond(1);
         
         Assert.assertTrue(driver.findElement(By.cssSelector("li.number-char.not-completed")).isDisplayed());
@@ -159,7 +170,10 @@ public class Topic_10_WebElement_Exercise {
         // Case 3: Enter uppercase only
         driver.findElement(By.id("new_password")).clear();
         driver.findElement(By.id("new_password")).sendKeys("ABCD");
-        driver.findElement(By.id("create-account-enabled"));
+        
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.id("create-account-enabled")));
+        sleepInSecond(1);
+        driver.findElement(By.id("create-account-enabled")).click();
         sleepInSecond(1);
         
         Assert.assertTrue(driver.findElement(By.cssSelector("li.number-char.not-completed")).isDisplayed());
@@ -172,7 +186,10 @@ public class Topic_10_WebElement_Exercise {
         
         driver.findElement(By.id("new_password")).clear();
         driver.findElement(By.id("new_password")).sendKeys("!@$#$");
-        driver.findElement(By.id("create-account-enabled"));
+        
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.id("create-account-enabled")));
+        sleepInSecond(1);
+        driver.findElement(By.id("create-account-enabled")).click();
         sleepInSecond(1);
         
         Assert.assertTrue(driver.findElement(By.cssSelector("li.number-char.not-completed")).isDisplayed());
@@ -185,7 +202,10 @@ public class Topic_10_WebElement_Exercise {
         // Case 5: enter more than 7 character
         driver.findElement(By.id("new_password")).clear();
         driver.findElement(By.id("new_password")).sendKeys("12345678");
-        driver.findElement(By.id("create-account-enabled"));
+        
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.id("create-account-enabled")));
+        sleepInSecond(1);
+        driver.findElement(By.id("create-account-enabled")).click();
         sleepInSecond(1);
         
         Assert.assertTrue(driver.findElement(By.cssSelector("li.number-char.completed")).isDisplayed());
@@ -194,10 +214,20 @@ public class Topic_10_WebElement_Exercise {
         Assert.assertTrue(driver.findElement(By.cssSelector("li.special-char.not-completed")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.cssSelector("li[class='8-char completed']")).isDisplayed());
         
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.id("create-account-enabled")));
+        sleepInSecond(1);
+        
+        Assert.assertTrue(driver.findElement(By.xpath("//button[@id='create-account-enable' and text()='Sign Up']")).isDisplayed());
+        
+        
+        
         // Case 6: valid 
         driver.findElement(By.id("new_password")).clear();
         driver.findElement(By.id("new_password")).sendKeys("Quynhle@21");
-        driver.findElement(By.id("create-account-enabled"));
+        
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.id("create-account-enabled")));
+        sleepInSecond(1);
+        driver.findElement(By.id("create-account-enabled")).click();
         sleepInSecond(1);
         
         Assert.assertFalse(driver.findElement(By.cssSelector("li.number-char.completed")).isDisplayed());
@@ -206,6 +236,8 @@ public class Topic_10_WebElement_Exercise {
         Assert.assertFalse(driver.findElement(By.cssSelector("li.special-char.completed")).isDisplayed());
         Assert.assertFalse(driver.findElement(By.cssSelector("li[class='8-char completed']")).isDisplayed());
 
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.id("create-account-enabled")));
+        sleepInSecond(1);
         driver.findElement(By.id("marketing_newsletter")).click();
         sleepInSecond(1);
         Assert.assertTrue(driver.findElement(By.id("marketing_newsletter")).isSelected());

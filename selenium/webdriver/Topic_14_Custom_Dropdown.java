@@ -121,11 +121,6 @@ public class Topic_14_Custom_Dropdown {
 			
 		}
 		
-   
-		
-		
-	
-	
 	public void selectItemInCustomDropdown(String xpathParent, String xpathChild, String expectedText) {
 
 		// click vào 1 thẻ nào đó để cho nó xổ hết các item ra
