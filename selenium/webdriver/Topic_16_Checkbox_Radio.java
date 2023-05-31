@@ -180,7 +180,7 @@ public class Topic_16_Checkbox_Radio {
 		// Case 2: Dùng thẻ khác hiện thị để click nhưng lại ko verify đc ( vì nếu ko phải thẻ input thì ko có trang thái selected nên ko verify đc)
 
 		driver.findElement(registerRadio_withoutInput).click();
-		Assert.assertTrue(driver.findElement(registerRadio_withoutInput).isSelected());
+		Assert.assertTrue(driver.findElement(registerRadio).isSelected());
 		
 		// Case 3: dùng thẻ khác input để click + dùng input để verify
 		

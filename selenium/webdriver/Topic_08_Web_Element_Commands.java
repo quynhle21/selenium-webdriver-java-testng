@@ -126,25 +126,9 @@ public class Topic_08_Web_Element_Commands {
 		driver.findElement(By.cssSelector("ul.benefit")).submit();
 		
 		
-		
-		
-		
-		
 	}
 
 	
-	
-
-	@Test
-	public void TC_02_() {
-		
-	}
-
-	@Test
-	public void TC_03_() {
-		
-	}
-
 	@AfterClass
 	public void afterClass() {
 		driver.quit();

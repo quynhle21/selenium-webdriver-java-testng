@@ -89,20 +89,8 @@ public class Topic_11_Textbox_TextArea {
 	@Test
 	public void TC_02_Invalid_Email() {
 
-	
-		
-
 	}
 
-	@Test
-	public void TC_03_() {
-		
-	}
-
-	@Test
-	public void TC_04_() {
-	
-	}
 
 	public void sleepInSecond(long timeout) {
 		try {

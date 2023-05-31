@@ -43,7 +43,7 @@ public class Topic_17_Alert {
 		
 		driver.findElement(By.xpath("//button[text()='Click for JS Alert']")).click();
 		
-		// Những cái mình cần switch qua: Alert/Iframe(frame)/Windown
+		// Những cái mình cần switch qua: Alert/Iframe(frame)/Window
 		Alert alert = explicitWait.until(ExpectedConditions.alertIsPresent()); 
 	
 		// Verify the tittle 
