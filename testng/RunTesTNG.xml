@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite parallel="false" name="Suite">
-  <test name="Test">
+
+  --><test name="Tiki Web">
+   
+   <group>
+   <run>
+   <include name="user"/>
+   
+   </run>
+   </group>
+   
+   <packages>
+   <package name="tiki.admin" />
+   </packages>
+   
+   
     <classes>
-      <class name="annotations.Topic_01_Annotation"/>
-      <class name="annotations.Topic_02_Annotations_testng"/>
+      <class name="titki.admin.Seller_01_Manage_Products"/>
+      <class name="titki.admin.Seller_01_Manage_Cart"/>
+      <class name="tiki.user.User_01_Checkout "/>
+      <class name="tiki.user.Usert_02_Orders "/>
     </classes>
+    
+    
   </test> <!-- Test -->
 </suite> <!-- Suite -->
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

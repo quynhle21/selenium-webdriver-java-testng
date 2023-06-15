@@ -54,7 +54,7 @@ public class Topic_01_Data_Type {
 		String[] student = {"Nguyen Van A", "Nguyen Van B"};
 		
 		Integer[] point = {15,30,29};
-		s
+		
 		
 
 	}

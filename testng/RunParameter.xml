@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+<!--   <suite name="Suite" parallel="tests" thread-count="3">  cái này dùng để chạy song song trên 3 trình duyệt-->
+ 
+ <!-- Biến global-->
+ <parameter name= "url" value="http://live.techpanda.org/" />
+ 
+ 
+ <test name = "Run on Firefox">
+     <!-- Biến Local (toàn cục) của 1 testcase -->
+    <parameter name = "browser" value= "Firefox"/>
+    <classes>
+       <class name="parameter.MultipleBrowser"/>
+    </classes>
+ </test>
+ 
+ 
+  <test name = "Run on Chrome">
+    <parameter name = "browser" value= "Chrome"/>
+    <classes>
+       <class name="parameter.MultipleBrowser"/>
+    </classes>
+ </test>
+ 
+  <test name = "Run on Edge">
+    <parameter name = "browser" value= "Edge"/>
+    <classes>
+       <class name="parameter.MultipleBrowser"/>
+    </classes>
+ </test>
+</suite> <!-- Suite -->
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
